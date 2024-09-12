@@ -1,0 +1,14 @@
+.photo{
+    display: flex;
+    gap:2rem;
+    justify-content: center;
+    color:rgba(132, 188, 207, 0.926);
+   
+}
+
+.photo p {
+    width: 60%;
+    text-align: center;
+    color:deepskyblue;
+    
+}

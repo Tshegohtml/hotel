@@ -1,0 +1,33 @@
+.nav-top {
+    background: rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    height: auto;
+    
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+    
+    padding: 1rem;
+  }
+  
+  .nav-container img {
+    width: 10rem;
+    height: auto;
+  }
+    
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+  
