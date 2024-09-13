@@ -1,0 +1,99 @@
+.my-rooms {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .rooms {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background-color:lightblue;
+  }
+  
+  .rooms-image-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    width: 35%;
+    height: 90%;
+  }
+  
+  .room-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 800px;
+  }
+  
+  .info h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  .info p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  
+  .view-more-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: flex-end;
+
+  }
+  
+  .view-more-btn:hover {
+    background-color: #0056b3;
+  }
+  
+ 
+  .h1-hotel {
+    text-align: center;
+    font-size: 2.5rem;
+    color:#007BFF;
+    margin-bottom: 30px;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .rooms {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .room-img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .info {
+      width: 100%;
+    }
+  }
+  
+  
