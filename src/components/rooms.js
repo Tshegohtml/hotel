@@ -13,10 +13,15 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { RiParkingBoxFill } from "react-icons/ri";
 
 const Rooms = () => {
-  const navigate = useNavigate(); // Initialize navigate function
+  const navigate = useNavigate(); 
 
   const handleAvailabilityClick = () => {
     navigate("/avail");
+  };
+
+  const handleGalleryClick = () => {
+    
+    navigate("/gallery");
   };
 
   return (
@@ -53,7 +58,7 @@ const Rooms = () => {
             <p>3 Queen sized beds</p>
             <p>With quality materials to provide good comfort</p>
             <div className="buttons-container">
-              <button className="view-more-btn">VIEW MORE</button>
+              <button className="view-more-btn" onClick={() => handleGalleryClick('family')}>GALLERY</button>
               <button className="availability" onClick={handleAvailabilityClick}>
                 CHECK AVAILABILITY
               </button>
@@ -78,7 +83,7 @@ const Rooms = () => {
             </div>
             <p>Has 2 king-sized beds with good quality bedding</p>
             <div className="buttons-container">
-              <button className="view-more-btn">VIEW MORE</button>
+              <button className="view-more-btn" onClick={() => handleGalleryClick('double')}>GALLERY</button>
               <button className="availability" onClick={handleAvailabilityClick}>
                 CHECK AVAILABILITY
               </button>
@@ -103,7 +108,7 @@ const Rooms = () => {
             </div>
             <p>Has queen-sized bed, kitchen</p>
             <div className="buttons-container">
-              <button className="view-more-btn">VIEW MORE</button>
+              <button className="view-more-btn" onClick={() => handleGalleryClick('apartment')}>GALLERY</button>
               <button className="availability" onClick={handleAvailabilityClick}>
                 CHECK AVAILABILITY
               </button>
@@ -128,7 +133,7 @@ const Rooms = () => {
             </div>
             <p>1 single king-sized bed</p>
             <div className="buttons-container">
-              <button className="view-more-btn">VIEW MORE</button>
+              <button className="view-more-btn" onClick={() => handleGalleryClick('single')}>GALLERY</button>
               <button className="availability" onClick={handleAvailabilityClick}>
                 CHECK AVAILABILITY
               </button>
@@ -153,7 +158,7 @@ const Rooms = () => {
             </div>
             <p>Superior Queen Bedroom</p>
             <div className="buttons-container">
-              <button className="view-more-btn">VIEW MORE</button>
+              <button className="view-more-btn" onClick={() => handleGalleryClick('suite')}>GALLERY</button>
               <button className="availability" onClick={handleAvailabilityClick}>
                 CHECK AVAILABILITY
               </button>
