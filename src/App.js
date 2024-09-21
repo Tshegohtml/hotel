@@ -1,3 +1,4 @@
+import React from "react";
 import Register from "./components/register";
 import Login from "./components/login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -10,6 +11,9 @@ import Avail from "./components/avail";
 import  Aboutus from"./components/aboutus";
 import Gallery from "./components/gallery";
 import Booknow from "./components/booknow";
+import Summary from "./components/summary";
+import Payment from "./components/payment";
+import Bookingform from "./components/bookingform";
 
 function App() {
   return (
@@ -18,16 +22,21 @@ function App() {
       <BrowserRouter>
       <Navbar />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Homepage />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/avail" element={<Avail />} />
+          
+          <Route path="/summary" element={<Summary/>} />
+          <Route path="/bookingform" element={<Bookingform/>} />
           <Route path="/booknow" element={<Booknow/>} />
-         
+          <Route path="/payment" element={<Payment/>} />
           <Route path="/hoover" element={<Hoover />} />
           <Route path="/aboutus" element={<Aboutus />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/register" element={<Register />} /> */}
+          {/* <Route path="/login" element={<Login />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

@@ -38,9 +38,10 @@ body {
     margin-top: 0;
   }
   
-  .logo {
+  .logoRegister {
     display: block;
     margin: 0 auto 20px;
+    min-height: 100px;
   }
   
   .form-group {

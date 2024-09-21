@@ -6,7 +6,7 @@ import Famie from "../components/famie.jfif";
 import "../components/gallery.css";
 import Double from "../components/double.jfif";
 import Doubleroom from "../components/double Room.jfif";
-import Apartment from "../components/Apartment rooms.jpg";
+import Apartment from "./apartment room image.jpg";
 import Appa from "../components/appa.jfif";
 
 function Gallery() {

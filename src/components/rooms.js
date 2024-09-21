@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Double from "../components/double-room.jpg";
 import Family from "../components/family.jpeg";
 import Single from "../components/room.jpg";
-import Apartment from "../components/Apartment rooms.jpg";
+import Apartment from "./apartment room image.jpg";
 import Suite from "../components/suite.jpg";
 import "./rooms.css";
 import { FaTv, FaWifi } from "react-icons/fa";
@@ -12,8 +12,10 @@ import { MdLocalLaundryService, MdCleaningServices } from "react-icons/md";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { RiParkingBoxFill } from "react-icons/ri";
 
+
 const Rooms = () => {
   const navigate = useNavigate(); 
+ 
 
   const handleAvailabilityClick = () => {
     navigate("/avail");
