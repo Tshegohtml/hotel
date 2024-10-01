@@ -15,6 +15,7 @@ import Booknow from "./components/booknow";
 import Summary from "./components/summary";
 import PaymentPage from "./components/payment"; 
 import Bookingform from "./components/bookingform";
+import AdminDashboard from "./components/admindashboard";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/payment" element={<PaymentPage />} /> {/* Updated route for PaymentPage */}
           <Route path="/hoover" element={<Hoover />} />
           <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/admindashboard" element={<AdminDashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

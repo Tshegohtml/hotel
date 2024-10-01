@@ -38,6 +38,7 @@ export const dbSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { setLoading, setData, setError, addBookingToState, addRoomToState } = dbSlice.actions;
 export default dbSlice.reducer;
+
 export const fetchData = () => async (dispatch) => {
   dispatch(setLoading());
   try {
@@ -51,6 +52,7 @@ export const fetchData = () => async (dispatch) => {
     dispatch(setError(error.message));
   }
 };
+
 export const addBookings = (bookingData) => async (dispatch) => {
   try {
     dispatch(setLoading());
@@ -61,6 +63,7 @@ export const addBookings = (bookingData) => async (dispatch) => {
     dispatch(setError(error.message));
   }
 };
+
 export const getBookings = () => async (dispatch) => {
   dispatch(setLoading());
   try {
@@ -74,6 +77,7 @@ export const getBookings = () => async (dispatch) => {
     dispatch(setError(error.message));
   }
 };
+
 export const addRooms = (roomData) => async (dispatch) => {
   try {
     dispatch(setLoading());
