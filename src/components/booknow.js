@@ -6,7 +6,7 @@ function Booknow() {
     const navigate = useNavigate();
     const location = useLocation();
     
-    // Retrieve the data passed from BookingForm
+    // Retrieve the data passed from BookingForm or defaults
     const { checkInDate, checkOutDate, numGuests, totalPrice, room, basePrice } = location.state || {};
 
     // Initialize form data with retrieved values
@@ -23,9 +23,17 @@ function Booknow() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
-        // Navigate to the payment page here
-        navigate("/payment");
+        // Pass booking data to the payment page
+        navigate("/payment", {
+            state: {
+                room: room || "Standard", // Add a default room type if not provided
+                checkin: formData.checkin,
+                checkout: formData.checkout,
+                numGuests: formData.adults,
+                totalPrice: totalPrice,
+                basePrice: basePrice
+            }
+        });
     };
 
     return (
@@ -72,9 +80,9 @@ function Booknow() {
                 {/* Display Price Details */}
                 <div className="price-details">
                     <h3>Price Details</h3>
-                    <p>Room: {room}</p>
+                    <p>Room: {room || "Standard"}</p>
                     <p>Base Price: R {basePrice}</p>
-                    <p>Total Price: R {totalPrice.toFixed(2)}</p>
+                    <p>Total Price: R {totalPrice ? totalPrice.toFixed(2) : "0.00"}</p>
                 </div>
 
                 <div className="booknow-btn">

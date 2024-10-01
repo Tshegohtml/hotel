@@ -1,129 +1,111 @@
 .my-rooms {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .rooms {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 8px;
-    background-color:rgba(0, 0, 0, 0);
-    
-  }
-  
-  .rooms-image-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-    width: 35%;
-    height: 90%;
-  }
-  
-  .room-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-  }
-  
-  .info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    max-width: 800px;
-  }
-  
-  .info h3 {
-    display: flex;
-    justify-content: center;
-    font-size: 1.5rem;
-    margin: 0;
-    color: #333;
-  }
-  
-  .info p {
-    margin: 0;
-    font-size: 1rem;
-    color: #666;
-    display: flex;
-    justify-content:end;
-  }
-  
-  
-  .view-more-btn {
-    background-color:lightblue;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    align-self: flex-end;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* 40px -> 2.5rem */
+  padding: 1.25rem; /* 20px -> 1.25rem */
+  max-width: 75rem; /* 1200px -> 75rem */
+  margin: 0 auto;
+}
 
-  }
-  
-  .view-more-btn:hover {
-    background-color: #0056b3;
-  }
-  
- 
-  .h1-hotel {
-    text-align: center;
-    font-size: 2.5rem;
-    color:#007BFF;
-    margin-bottom: 30px;
-  }
-  
- 
-  @media (max-width: 768px) {
-    .rooms {
+.rooms {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.25rem; /* 20px -> 1.25rem */
+  border: 0.0625rem solid #ccc; /* 1px -> 0.0625rem */
+  padding: 0.9375rem; /* 15px -> 0.9375rem */
+  border-radius: 0.5rem; /* 8px -> 0.5rem */
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.rooms-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  height: 90%;
+}
+
+.room-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem; /* 8px -> 0.5rem */
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem; /* 5px -> 0.3125rem */
+  max-width: 50rem; /* 800px -> 50rem */
+}
+
+.info h3 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.info p {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+  display: flex;
+  justify-content: end;
+}
+
+.view-more-btn,
+.availability {
+  background-color: lightblue;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem; /* 10px 20px -> 0.625rem 1.25rem */
+  border-radius: 0.3125rem; /* 5px -> 0.3125rem */
+  cursor: pointer;
+  margin-top: 0.625rem; /* 10px -> 0.625rem */
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+}
+
+.view-more-btn:hover,
+.availability:hover {
+  background-color: #0056b3;
+}
+
+.h1-hotel {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #007BFF;
+  margin-bottom: 1.875rem; /* 30px -> 1.875rem */
+}
+
+.rooms-icons {
+  display: flex;
+  gap: 2rem; /* 32px -> 2rem */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.625rem; /* 10px -> 0.625rem */
+}
+
+@media (max-width: 768px) {
+  .rooms {
       flex-direction: column;
       align-items: flex-start;
-    }
-  
-    .room-img {
+  }
+
+  .room-img {
       width: 100%;
       height: auto;
-    }
-  
-    .info {
+  }
+
+  .info {
       width: 100%;
-    }
   }
-  
-  
-  .availability{
-    background-color:lightblue;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    align-self: flex-end;
-    
-
-  }
-
-  .rooms-icons{
-    display: flex;
-    gap: 2rem;
-
-  }
-  .buttons-container{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
+}
