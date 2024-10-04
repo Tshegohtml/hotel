@@ -30,7 +30,7 @@ export default AdminSlice.reducer
 export const fetchDataFirestore=async(dispatch)=>{
     dispatch(setLoading())
     try{
-        const docSnap = await getDocs(collection(db,"Bookings"));
+        const docSnap = await getDocs(collection(db,"bookings"));
         if (docSnap.docs.length>0) {
             const data=docSnap.docs.map((doc)=>({
                 id: doc.id,

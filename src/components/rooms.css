@@ -1,9 +1,9 @@
 .my-rooms {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem; /* 40px -> 2.5rem */
-  padding: 1.25rem; /* 20px -> 1.25rem */
-  max-width: 75rem; /* 1200px -> 75rem */
+  gap: 2.5rem; 
+  padding: 1.25rem; 
+  max-width: 75rem; 
   margin: 0 auto;
 }
 
@@ -13,10 +13,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 1.25rem; /* 20px -> 1.25rem */
-  border: 0.0625rem solid #ccc; /* 1px -> 0.0625rem */
-  padding: 0.9375rem; /* 15px -> 0.9375rem */
-  border-radius: 0.5rem; /* 8px -> 0.5rem */
+  gap: 1.25rem; 
+  border: 0.0625rem solid #ccc; 
+  padding: 0.9375rem; 
+  border-radius: 0.5rem; 
   background-color: rgba(0, 0, 0, 0);
 }
 
@@ -37,7 +37,7 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 0.3125rem; /* 5px -> 0.3125rem */
+  gap: 0.3125rem;
   max-width: 50rem; /* 800px -> 50rem */
 }
 

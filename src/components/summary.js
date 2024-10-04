@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaTv, FaWifi } from "react-icons/fa";
 import { MdLocalLaundryService, MdCleaningServices } from "react-icons/md";
 import { IoFastFoodOutline } from "react-icons/io5";
@@ -7,26 +7,42 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./summary.css";
 import './bookingform.css';
 
- 
-
 const SummaryAndBooking = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const room = location.state;
 
-    
     const [checkInDate, setCheckInDate] = useState('');
     const [checkOutDate, setCheckOutDate] = useState('');
     const [numGuests, setNumGuests] = useState(1);
+    const [totalPrice, setTotalPrice] = useState(0);
 
-    
+    const pricePerNight = 200;
+
+    // Function to calculate the number of nights and total price
+    const calculateTotalPrice = () => {
+        const checkIn = new Date(checkInDate);
+        const checkOut = new Date(checkOutDate);
+
+        if (!isNaN(checkIn.getTime()) && !isNaN(checkOut.getTime()) && checkIn < checkOut) {
+            const timeDiff = checkOut - checkIn;
+            const numberOfDays = timeDiff / (1000 * 60 * 60 * 24);
+            const basePrice = parseFloat(room.Amount.replace(/[^\d.-]+/g, ''));
+            const calculatedPrice = numberOfDays * (numGuests <= 2 ? basePrice : basePrice + (numGuests - 2) * pricePerNight);
+
+            setTotalPrice(calculatedPrice);
+        } else {
+            setTotalPrice(0);
+        }
+    };
+
+    useEffect(() => {
+        calculateTotalPrice();
+    }, [checkInDate, checkOutDate, numGuests]);
+
     if (!room) {
         return <div>No room data available.</div>;
     }
-
-    const basePrice = parseFloat(room.Amount.replace(/[^\d.-]+/g, ''));
-    const pricePerNight = 200;
-    const totalPrice = numGuests <= 2 ? basePrice : basePrice + (numGuests - 2) * pricePerNight;
 
     const handleReserve = () => {
         navigate("/booknow", {
@@ -41,10 +57,8 @@ const SummaryAndBooking = () => {
         });
     };
 
-    
-
-    const handleCheckout =() => {
-        navigate("/avail")
+    const handleCheckout = () => {
+        navigate("/avail");
     };
 
     return (
@@ -52,15 +66,12 @@ const SummaryAndBooking = () => {
             <div className="rooms-image-div2">
                 <img src={room.image} className="room-img" alt={room.Rooms} />
                 <h2 className='summary-heading'>Size: Spacious layout offering ample room to relax.
-                Bed: Plush single bed with premium linens for a restful night's sleep.
-                View: Stunning city or garden views, enhancing your stay.
-                Wi-Fi: High-speed internet access to stay connected.
-                
+                    Bed: Plush single bed with premium linens for a restful night's sleep.
+                    View: Stunning city or garden views, enhancing your stay.
+                    Wi-Fi: High-speed internet access to stay connected.
                 </h2>
             </div>
-            <div className="summary-info-div">
-                
-            </div>
+            <div className="summary-info-div"></div>
             <div className="rooms-1">
                 <div className="info">
                     <h3>{room.Rooms}</h3>
@@ -78,7 +89,6 @@ const SummaryAndBooking = () => {
                     <p><strong>Check-In-Time: from 09:00</strong> {room.checkIn}</p>
                     <p><strong>Check-Out-Time: from 10:00</strong> {room.checkOut}</p>
                 </div>
-               
             </div>
 
             {/* Booking Form Container */}
@@ -125,10 +135,6 @@ const SummaryAndBooking = () => {
                 </div>
                 <button className="reserve-btn" onClick={handleReserve}>Reserve</button>
             </div>
-
-
-
-            
         </div>
     );
 };

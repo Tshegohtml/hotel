@@ -16,6 +16,7 @@ import Summary from "./components/summary";
 import PaymentPage from "./components/payment"; 
 import Bookingform from "./components/bookingform";
 import AdminDashboard from "./components/admindashboard";
+import Resturant from "./components/resturant";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/payment" element={<PaymentPage />} /> {/* Updated route for PaymentPage */}
           <Route path="/hoover" element={<Hoover />} />
           <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/resturant" element={<Resturant />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
         </Routes>
       </BrowserRouter>

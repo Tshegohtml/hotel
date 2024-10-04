@@ -24,7 +24,7 @@ body {
     background-size: cover;
     width: 1334px;
     box-sizing: border-box;
-    height: 853px;
+   
 
   }
   
@@ -32,6 +32,8 @@ body {
     flex: 1;
     padding: 20px;
     background: rgb(195, 225, 243);
+    width: 1334px;
+    
   }
   
   .form-section h1 {
