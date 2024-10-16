@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./homepage.css";
 import { FaCalendarAlt } from "react-icons/fa";
 import Hoover from "./hoover";
+import Navbar from "./navbar";
 
 const Homepage = () => {
     const [checkInDate, setCheckInDate] = useState("");
@@ -19,6 +20,7 @@ const Homepage = () => {
 
     return (
         <div className="home">
+            <Navbar />
             <div className="section1">
                 <div className="text-overlay">
                     <h1>Welcome to the STAR-HOTEL</h1>

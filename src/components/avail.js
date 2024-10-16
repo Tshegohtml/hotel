@@ -114,7 +114,7 @@ function Avail() {
                   className="available-btn book-now-btn"
                   onClick={() => handleBookNowClick(room)}
                 >
-                  Book Now
+                  BOOK NOW
                 </button>
               
             </div>

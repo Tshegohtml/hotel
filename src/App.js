@@ -17,14 +17,18 @@ import PaymentPage from "./components/payment";
 import Bookingform from "./components/bookingform";
 import AdminDashboard from "./components/admindashboard";
 import Resturant from "./components/resturant";
+import Profile from "./components/profile";
+import ForgotPassword from "./components/forgotpassword"; 
+
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+       
         <Routes>
           <Route path="/" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/rooms" element={<Rooms />} />
@@ -37,6 +41,7 @@ function App() {
           <Route path="/hoover" element={<Hoover />} />
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/resturant" element={<Resturant />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
         </Routes>
       </BrowserRouter>

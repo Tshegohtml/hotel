@@ -60,9 +60,9 @@ const Rooms = () => {
             <p>3 Queen sized beds</p>
             <p>With quality materials to provide good comfort</p>
             <div className="buttons-container">
-              <button className="view-more-btn" onClick={() => handleGalleryClick('family')}>GALLERY</button>
+              <button className="view-more-btn" onClick={() => handleGalleryClick('family')}>MORE ROOMS</button>
               <button className="availability" onClick={handleAvailabilityClick}>
-                CHECK AVAILABILITY
+                VIEW MORE
               </button>
             </div>
           </div>
@@ -85,9 +85,9 @@ const Rooms = () => {
             </div>
             <p>Has 2 king-sized beds with good quality bedding</p>
             <div className="buttons-container">
-              <button className="view-more-btn" onClick={() => handleGalleryClick('double')}>GALLERY</button>
+              <button className="view-more-btn" onClick={() => handleGalleryClick('double')}>MORE ROOMS</button>
               <button className="availability" onClick={handleAvailabilityClick}>
-                CHECK AVAILABILITY
+                VIEW MORE
               </button>
             </div>
           </div>
@@ -110,9 +110,9 @@ const Rooms = () => {
             </div>
             <p>Has queen-sized bed, kitchen</p>
             <div className="buttons-container">
-              <button className="view-more-btn" onClick={() => handleGalleryClick('apartment')}>GALLERY</button>
+              <button className="view-more-btn" onClick={() => handleGalleryClick('apartment')}>MORE ROOMS</button>
               <button className="availability" onClick={handleAvailabilityClick}>
-                CHECK AVAILABILITY
+                VIEW MORE
               </button>
             </div>
           </div>
@@ -135,9 +135,9 @@ const Rooms = () => {
             </div>
             <p>1 single king-sized bed</p>
             <div className="buttons-container">
-              <button className="view-more-btn" onClick={() => handleGalleryClick('single')}>GALLERY</button>
+              <button className="view-more-btn" onClick={() => handleGalleryClick('single')}>MORE ROOMS</button>
               <button className="availability" onClick={handleAvailabilityClick}>
-                CHECK AVAILABILITY
+                VIEW MORE
               </button>
             </div>
           </div>
@@ -151,7 +151,7 @@ const Rooms = () => {
           <div className="info">
             <h3>SUITE</h3>
             <div className="rooms-icons">
-              <FaWifi size={30} />
+              <FaWifi size={30} /> 
               <MdLocalLaundryService size={30} />
               <MdCleaningServices size={30} />
               <FaTv size={30} />
@@ -160,9 +160,9 @@ const Rooms = () => {
             </div>
             <p>Superior Queen Bedroom</p>
             <div className="buttons-container">
-              <button className="view-more-btn" onClick={() => handleGalleryClick('suite')}>GALLERY</button>
+              <button className="view-more-btn" onClick={() => handleGalleryClick('suite')}> MORE ROOMS</button>
               <button className="availability" onClick={handleAvailabilityClick}>
-                CHECK AVAILABILITY
+                VIEW MORE
               </button>
             </div>
           </div>
