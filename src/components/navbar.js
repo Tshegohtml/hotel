@@ -1,49 +1,68 @@
-import "./navbar";
-import logo from "./STAR-HOTEL-removebg-preview (1).png";
-import { Link } from "react-router-dom";
-import "./navbar.css";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../components/navbar.css';
 
-const Navbar = () => {
-    return (
-      <div className="nav-top">
-        <div className="nav-container">
-            <img src={logo} alt="Logo" />
-          
-            <div className="navigation">
-            <ul>
-            <li>
-                <Link to="/">REGISTER</Link>
-              </li>
-            <li>
-                <Link to="/login">LOGIN</Link>
-              </li>
-              <li>
-                <Link to="/home">HOME</Link>
-              </li>
-              <li>
-                <Link to="/aboutus">ABOUT US</Link>
-              </li>
-              <li>
-                <Link to="/gallery">GALLERY</Link>
-              </li>
-              <li>
-                <Link to="/resturant">RESTURANT</Link>
-              </li>
-              <li>
-                <Link to="/rooms">ROOMS</Link>
-              </li>
-              <li>
-                <Link to="/">PROFILE</Link>
-              </li>
-            </ul>
-            </div>
-            
-           
-        </div>
-      </div>
-    );
+const NavBar = () => {
+  const [activeItem, setActiveItem] = useState('Home'); // Set 'Home' as default active item
+  const handleMenuClick = (item) => {
+    setActiveItem(item); // Update active item when clicked
   };
-  
-  export default Navbar;
-  
-  
+  return (
+    <div className="nav-container">
+      <div>
+        <h1>Logo</h1>
+      </div>
+      <ul>
+        <li
+          className={activeItem === 'Home' ? 'active' : ''}
+          onClick={() => handleMenuClick('Home')}
+        >
+          Home
+        </li>
+
+<Link to="/aboutus">
+        <li
+          className={activeItem === 'Aboutus' ? 'active' : ''}
+          onClick={() => handleMenuClick('Aboutus')}
+        >
+          Aboutus
+        </li></Link>
+
+        <Link to="/gallery"> 
+        
+        <li
+          className={activeItem === 'Gallery' ? 'active' : ''}
+          onClick={() => handleMenuClick('Gallery')}
+        >
+         Gallery
+        </li></Link>
+        
+        <Link to="/resturant">
+        <li
+          className={activeItem === 'Resturant' ? 'active' : ''}
+          onClick={() => handleMenuClick('Resturant')}
+        >
+        Resturant
+        </li></Link>
+
+        <Link to="/rooms">
+        <li
+          className={activeItem === 'Blog' ? 'active' : ''}
+          onClick={() => handleMenuClick('Rooms')}
+        >
+         Rooms
+        </li></Link>
+      </ul>
+    </div>
+  );
+};
+export default NavBar;
+
+
+
+
+
+
+
+
+

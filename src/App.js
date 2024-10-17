@@ -19,6 +19,9 @@ import AdminDashboard from "./components/admindashboard";
 import Resturant from "./components/resturant";
 import Profile from "./components/profile";
 import ForgotPassword from "./components/forgotpassword"; 
+import Ourhistory from "./components/ourhistory";
+import Facilities from "./components/facilities";
+import Testimony from "./components/testimony";
 
 
 function App() {
@@ -42,6 +45,9 @@ function App() {
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/resturant" element={<Resturant />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/ourhistory" element={<Ourhistory />} />
+          <Route path="/facilities" element={<Facilities />} />
+          <Route path="/testimony" element={<Testimony />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
         </Routes>
       </BrowserRouter>

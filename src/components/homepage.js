@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./homepage.css";
 import { FaCalendarAlt } from "react-icons/fa";
-import Hoover from "./hoover";
-import Navbar from "./navbar";
+import NavBar from "./navbar";
+import Ourhistory from "./ourhistory";
+import Hero from "./hero"
+import Facilities from "./facilities";
+import Testimony from "./testimony";
 
 const Homepage = () => {
     const [checkInDate, setCheckInDate] = useState("");
@@ -19,20 +22,14 @@ const Homepage = () => {
     };
 
     return (
-        <div className="home">
-            <Navbar />
-            <div className="section1">
-                <div className="text-overlay">
-                    <h1>Welcome to the STAR-HOTEL</h1>
-                    <h4>ENJOY YOUR STAY AT OUR LUXURIOUS HOTEL</h4>
-                   
-                    <button className="book-now-btn" onClick={handleBookNow}>
-                        BOOK NOW
-                    </button>
-                </div>
-            </div>
+        <div >
+           
+            <NavBar/>
+            <Hero/>
+            <Ourhistory/>
+            <Facilities/>
+            <Testimony/>
             
-            <Hoover />
         </div>
     );
 }

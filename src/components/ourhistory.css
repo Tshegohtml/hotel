@@ -1,0 +1,59 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+   
+    color: black;
+  }
+  
+  
+  .history-heading  {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .content {
+  
+    
+    width: 100%;
+    max-width: 1200px; 
+    gap: 5rem; 
+    color: black;
+  }
+  
+  .text-div {
+    flex: 2; 
+    text-align: justify;
+    line-height: 1.8;
+    color: black;
+  }
+  
+  .img-div {
+    flex: 1; 
+    max-width: 400px; 
+  }
+  
+  .history-image {
+    width: 900px; 
+    height: 400px;
+    
+  }
+  
+  .about-container p {
+  
+  }
+
+  .history-heading{
+    color:skyblue
+  }
+
+  .history-number{
+    display: flex;
+    justify-content: space-between;
+
+  }
+  

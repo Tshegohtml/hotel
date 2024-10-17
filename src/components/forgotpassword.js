@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './forgotpassword.css';
+import { useSelector, useDispatch } from "react-redux";
+import { resetPassword } from "../redux/authSlice";
+import logo from "./STAR-HOTEL-removebg-preview (1).png";
+
 
 
 
@@ -10,58 +14,50 @@ const ForgotPassword = () => {
     const [verificationCode, setVerificationCode] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const navigate = useNavigate();
-    const handleSendCode = (e) => {
-        e.preventDefault();
-        console.log('Verification code sent to:', email);
-        setCodeSent(true);
+
+    const dispatch = useDispatch();
+
+    
+    const {user,loading,error}=useSelector((state) => state.auth);
+
+    
+        
+   
+   const handleResetPassword = () => {
+     
+        dispatch(resetPassword({email}));
+       
+
     };
-    const handleResetPassword = (e) => {
-        e.preventDefault();
-        console.log('Password reset with code:', verificationCode, 'and new password:', newPassword);
-        navigate('/signin');
-    };
+
+
     return (
         <div className="forgot-password-container">
+           
+         <div>
+         <div className="-register-form-section">
+         <img src={logo} alt="Logo" className="logoforgotpassword" width="300" height="300" />
+         </div>
+         
             <h2>Forgot Password</h2>
-            {!codeSent ? (
-                <form onSubmit={handleSendCode}>
+         
+                <div>
                     <div className="input-group">
-                        <label htmlFor="email">Enter your email address</label>
+                        
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="newPassword">Enter email</label>
                         <input
                             type="email"
-                            id="email"
-                            value={email}
+                            id="newPassword"
+                         
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
                     </div>
-                    <button type="submit" className="send-code-button">ENTER</button>
-                </form>
-            ) : (
-                <form onSubmit={handleResetPassword}>
-                    <div className="input-group">
-                        <label htmlFor="verificationCode">Enter verification code</label>
-                        <input
-                            type="text"
-                            id="verificationCode"
-                            value={verificationCode}
-                            onChange={(e) => setVerificationCode(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="input-group">
-                        <label htmlFor="newPassword">Enter new password</label>
-                        <input
-                            type="password"
-                            id="newPassword"
-                            value={newPassword}
-                            onChange={(e) => setNewPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <button type="submit" className="reset-password-button">Reset Password</button>
-                </form>
-            )}
+                    <button type="submit" className="reset-password-button" onClick={handleResetPassword}>Reset Password</button>
+                </div>
+        </div>
         </div>
     );
 };

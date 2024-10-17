@@ -1,150 +1,23 @@
-body {
-    background-color: antiquewhite;
-    margin: 0;
-    padding: 0;
+
+
+body{
+    background-color: white;
 }
 
-.home {
-    position: relative;
-    background: url(./hotel-image.jpg);
-    width: 100%;
-    height: 37.5rem; /* 60vh converted to rem (assuming 1vh = 0.625rem) */
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
 
-.section1 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-.img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-.text-overlay {
-    position: absolute;
-    width: 100%;
-    height: 31.25rem; /* 50vh converted to rem */
-    text-align: center;
-    padding: 1.25rem; /* 20px */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
-.home h1 {
-    font-family: 'Georgia', serif;
-    font-size: 2.5rem; /* No change */
-    letter-spacing: 0.125rem; /* 2px converted to rem */
-    text-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.5); /* 2px to rem */
-    margin: 0;
-}
 
-h4 {
-    font-family: 'Arial', sans-serif;
-    font-size: 1.2rem; /* No change */
-    color: white;
-    text-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.3); /* 1px to rem */
-}
 
-.check {
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem; /* 20px */
-    padding: 1.25rem; /* 20px */
-}
 
-.date-container, .book-now-btn {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    padding: 0.9375rem 1.5625rem; /* 15px 25px */
-    margin: 0.625rem; /* 10px */
-    border-radius: 0.3125rem; /* 5px */
-    font-size: 0.875rem; /* 14px */
-    font-weight: bold;
-    color: #333; 
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 0 4px 8px to rem */
-    transition: all 0.3s ease; 
-    cursor: pointer;
-}
 
-.date-container:hover, .book-now-btn:hover {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.2); /* 0 6px 12px to rem */
-}
 
-.book-now-btn {
-    background-color: rgba(51, 153, 255, 0.9); 
-    color: white;
-    width: 15%;
-    padding: 0.75rem; /* 12px */
-    border-radius: 0.3125rem; /* 5px */
-}
 
-.book-now-btn:hover {
-    background-color: rgba(51, 153, 255, 1);
-}
 
-.guest-container select {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    padding: 0.9375rem; /* 15px */
-    border-radius: 0.3125rem; /* 5px */
-    font-size: 0.875rem; /* 14px */
-    color: #333;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 0 4px 8px to rem */
-    cursor: pointer;
-    width: 12.5rem; /* 200px converted to rem */
-    appearance: none;
-}
 
-.guest-container select:hover {
-    background-color: rgba(255, 255, 255, 1);
-}
 
-.logo {
-    display: flex;
-    justify-content: center;
-    color: white;
-}
 
-.logo img {
-    width: 50%;
-}
 
-li {
-    width: 9.375rem; /* 150px converted to rem */
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    color: white;
-}
 
-.list {
-    display: flex;
-    gap: 2rem; /* No change */
-}
 
-.listy {
-    width: 100%;
-}
-
-.section2 {
-    display: flex;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.h1 {
-    font-size: 1.875rem; /* 30px converted to rem */
-}

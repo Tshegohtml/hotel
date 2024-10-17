@@ -36,9 +36,14 @@ export const signUp = ({ email, password }) => async (dispatch) => {
   }
 };
 
-export const resetPassword = async ({ email }) => {
+
+
+
+export const resetPassword = ({ email }) => async (dispatch) => {
   try {
     await sendPasswordResetEmail(auth, email);
+    alert("Please check email")
+    dispatch(setUser());
   } catch (error) {
     console.error("Error sending password reset email:", error.message);
   }

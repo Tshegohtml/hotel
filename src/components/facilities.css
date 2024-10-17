@@ -1,0 +1,21 @@
+.facility-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+   
+}
+
+.facilities-image{
+    width:400px
+}
+
+.faciliti-para{
+    width:1000px
+}
+.facility-icons{
+    display: flex;
+    justify-content:space-around;
+    margin-top: 3%;
+
+}
