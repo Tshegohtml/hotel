@@ -1,5 +1,6 @@
 .testimony-container{
     background-color:rgb(93, 48, 48);
+   height: 15rem;
     
 }
 
@@ -11,8 +12,12 @@
 
 
 }
-.testimony-para{
-    color: black;
+.testimony-para p{
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    color: white;
     width:1000px
+
     
 }

@@ -25,16 +25,17 @@ function Ourhistory() {
           </p>
 
           <div className="history-number">
-            <div>
+            <div className="history-word">
               <h1>50</h1>
+              
               <small>STAR-HOTEL ROOMS</small>
             </div>
-            <div>
-            <h1>15</h1>
+            <div className="history-word">
+            <h1>11</h1>
               <small>ACTIVITIES</small>
             </div>
-            <div>
-            <h1>10</h1>
+            <div className="history-word">
+            <h1>3</h1>
               <small>RESTURANTS</small>
             </div>
           </div>

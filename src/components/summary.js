@@ -69,20 +69,14 @@ const SummaryAndBooking = () => {
                     Bed: Plush single bed with premium linens for a restful night's sleep.
                     View: Stunning city or garden views, enhancing your stay.
                     Wi-Fi: High-speed internet access to stay connected.
+                    
                 </h2>
             </div>
             <div className="summary-info-div"></div>
             <div className="rooms-1">
                 <div className="info">
                     <h3>{room.Rooms}</h3>
-                    <div className="icons-con">
-                        <FaWifi size={30} />
-                        <MdLocalLaundryService size={30} />
-                        <MdCleaningServices size={30} />
-                        <FaTv size={30} />
-                        <IoFastFoodOutline size={30} />
-                        <RiParkingBoxFill size={30} />
-                    </div>
+                    
                     <p>{room.Details}</p>
                     <p className="room-cost">{room.Amount} per night</p>
                     <p><strong>Amenities:</strong> {room.Amenities}</p>

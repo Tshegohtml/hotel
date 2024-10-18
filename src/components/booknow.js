@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "../components/booknow.css";
 import { useLocation, useNavigate } from "react-router-dom"; 
+import Logo from "../components/logo-removebg-preview.png";
 
 function Booknow() {
     const navigate = useNavigate();
@@ -26,7 +27,7 @@ function Booknow() {
         // Pass booking data to the payment page
         navigate("/payment", {
             state: {
-                room: room || "Standard", // Add a default room type if not provided
+                room: room || "Standard", 
                 checkin: formData.checkin,
                 checkout: formData.checkout,
                 numGuests: formData.adults,
@@ -37,11 +38,17 @@ function Booknow() {
     };
 
     return (
+
+        <div>
+            <div className='booknow-logo'>
+            <img src={Logo} alt="Logo" className="logoRegister" width="400" height="200" />
+            </div>
         <div className="booknow-container">
             <div className="booknow-heading">
-                <h1>START-HOTEL BOOKING PAGE</h1>
+
+                <h1> SUMMARY FOR BOOKING</h1>
             </div>
-            <p>Please fill out the form</p>
+          
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Check-In Date:</label>
@@ -89,6 +96,7 @@ function Booknow() {
                     <button className="continue-btn" type="submit">Continue</button>
                 </div>
             </form>
+            </div>
         </div>
     );
 }

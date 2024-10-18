@@ -22,6 +22,8 @@ import ForgotPassword from "./components/forgotpassword";
 import Ourhistory from "./components/ourhistory";
 import Facilities from "./components/facilities";
 import Testimony from "./components/testimony";
+import Contactfooter from "./components/contactfooter";
+import Userprofile from "./components/userprofile";
 
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
           <Route path="/" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/userprofile" element={<Userprofile/>} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/gallery" element={<Gallery />} />
@@ -48,6 +51,7 @@ function App() {
           <Route path="/ourhistory" element={<Ourhistory />} />
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/testimony" element={<Testimony />} />
+          <Route path="/contactfooter" element={<Contactfooter />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
         </Routes>
       </BrowserRouter>

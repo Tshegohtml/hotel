@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '../config/firebase';
+import { auth, db } from '../config/firebase';
+import { doc, getDoc, addDoc, collection, setDoc } from "firebase/firestore";
+
 const initialState = {
   user: null,
   loading: false,
@@ -26,18 +28,21 @@ const authSlice = createSlice({
 });
 export const { setLoading, setUser, setError } = authSlice.actions;
 
-export const signUp = ({ email, password }) => async (dispatch) => {
+export const signUp = ({ firstName, lastName, email, password }) => async (dispatch) => {
   dispatch(setLoading());
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    dispatch(setUser(userCredential.user));
+    await setDoc(doc(db, "Users", userCredential.user.uid), {
+      firstName,
+      lastName,
+      email,
+      role: "client",
+    });
+    dispatch(setUser({ uid: userCredential.user.uid, email, firstName, lastName }));
   } catch (error) {
     dispatch(setError(error.message));
   }
 };
-
-
-
 
 export const resetPassword = ({ email }) => async (dispatch) => {
   try {
@@ -49,15 +54,26 @@ export const resetPassword = ({ email }) => async (dispatch) => {
   }
 };
 
-export const signIn = ({ email, password }) => async (dispatch) => {
-  dispatch(setLoading());
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    dispatch(setUser(userCredential.user));
-  } catch (error) {
-    dispatch(setError(error.message));
-  }
-};
+export const signIn =
+  ({ email, password }) =>
+  async (dispatch) => {
+    dispatch(setLoading());
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      dispatch(
+        setUser({
+          uid: userCredential.user.uid,
+          email: userCredential.user.email,
+        })
+      );
+    } catch (error) {
+      dispatch(setError(error.message));
+    }
+  };
 export default authSlice.reducer;
 
 

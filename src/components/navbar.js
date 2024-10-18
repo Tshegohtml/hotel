@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../components/navbar.css';
+import Logo from "../components/logo-removebg-preview.png";
 
 const NavBar = () => {
   const [activeItem, setActiveItem] = useState('Home'); // Set 'Home' as default active item
@@ -10,7 +11,7 @@ const NavBar = () => {
   return (
     <div className="nav-container">
       <div>
-        <h1>Logo</h1>
+      <img src={Logo} alt="Logo" className="logo" width="400" height="200" />
       </div>
       <ul>
         <li
@@ -37,13 +38,8 @@ const NavBar = () => {
          Gallery
         </li></Link>
         
-        <Link to="/resturant">
-        <li
-          className={activeItem === 'Resturant' ? 'active' : ''}
-          onClick={() => handleMenuClick('Resturant')}
-        >
-        Resturant
-        </li></Link>
+       
+        
 
         <Link to="/rooms">
         <li

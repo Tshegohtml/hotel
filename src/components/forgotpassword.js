@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './forgotpassword.css';
 import { useSelector, useDispatch } from "react-redux";
 import { resetPassword } from "../redux/authSlice";
-import logo from "./STAR-HOTEL-removebg-preview (1).png";
+import Logo from "../components/logo-removebg-preview.png";
 
 
 
@@ -36,7 +36,7 @@ const ForgotPassword = () => {
            
          <div>
          <div className="-register-form-section">
-         <img src={logo} alt="Logo" className="logoforgotpassword" width="300" height="300" />
+         <img src={Logo} alt="Logo" className="logo" width="400" height="400" />
          </div>
          
             <h2>Forgot Password</h2>

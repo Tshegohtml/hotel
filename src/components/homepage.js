@@ -7,6 +7,7 @@ import Ourhistory from "./ourhistory";
 import Hero from "./hero"
 import Facilities from "./facilities";
 import Testimony from "./testimony";
+import Contactfooter from "./contactfooter";
 
 const Homepage = () => {
     const [checkInDate, setCheckInDate] = useState("");
@@ -29,6 +30,7 @@ const Homepage = () => {
             <Ourhistory/>
             <Facilities/>
             <Testimony/>
+            <Contactfooter/>
             
         </div>
     );

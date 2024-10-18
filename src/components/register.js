@@ -1,6 +1,6 @@
 import React,{useState,useEffect}  from "react";
 import  "./register.css";
-import logo from "./STAR-HOTEL-removebg-preview (1).png";
+import Logo from "../components/logo-removebg-preview.png";
 import { Link} from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -19,9 +19,11 @@ const Register =() => {
   
 const dispatch=useDispatch();
 
-const handleSignUp = () => {
-  dispatch(signUp({email,password})); 
+const handleSignUp = (e) => {
+  e.preventDefault();
+  dispatch(signUp({ firstName: firstname, lastName: lastname, email, password }));
 };
+
 
 useEffect(() => {
   if (user) {
@@ -36,7 +38,7 @@ useEffect(() => {
         <div className="register-container">
          
           <div className="-register-form-section">
-          <img src={logo} alt="Logo" className="logoRegister" width="200" height="200" />
+          <img src={Logo} alt="Logo" className="logoRegister" width="400" height="300" />
             <h1>STAR-HOTEL BOOKING</h1>
             <small>PLEASE FILLOUT THIS FORM WITH THE REQUIRED INFORMTION</small>
             

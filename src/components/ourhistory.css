@@ -1,59 +1,64 @@
 .about-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
-   
-    color: black;
-  }
-  
-  
-  .history-heading  {
-    font-size: 2.5rem; 
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .content {
-  
-    
-    width: 100%;
-    max-width: 1200px; 
-    gap: 5rem; 
-    color: black;
-  }
-  
-  .text-div {
-    flex: 2; 
-    text-align: justify;
-    line-height: 1.8;
-    color: black;
-  }
-  
-  .img-div {
-    flex: 1; 
-    max-width: 400px; 
-  }
-  
-  .history-image {
-    width: 900px; 
-    height: 400px;
-    
-  }
-  
-  .about-container p {
-  
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  color: black;
+}
 
-  .history-heading{
-    color:skyblue
-  }
+.history-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: skyblue; 
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-  .history-number{
-    display: flex;
-    justify-content: space-between;
+.content {
+  width: 100%;
+  max-width: 1200px;
+  gap: 5rem;
+  color: black;
+}
 
-  }
-  
+.text-div {
+  flex: 2;
+  text-align: justify;
+  line-height: 1.8;
+  color: black;
+}
+
+.img-div {
+  flex: 1;
+  max-width: 400px;
+}
+
+.history-image {
+  width: 900px;
+  height: 400px;
+}
+
+.about-container p {
+  color: black;
+}
+
+.history-number {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.history-word {
+  text-align: center; 
+}
+
+.history-word h1 {
+  color: skyblue; 
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.history-word small {
+  color: black;
+  font-size: 1rem;
+}
