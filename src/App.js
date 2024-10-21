@@ -24,6 +24,7 @@ import Facilities from "./components/facilities";
 import Testimony from "./components/testimony";
 import Contactfooter from "./components/contactfooter";
 import Userprofile from "./components/userprofile";
+import Reviews from "./components/reviews";
 
 
 function App() {
@@ -37,9 +38,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/userprofile" element={<Userprofile/>} />
           <Route path="/home" element={<Homepage />} />
+          <Route path="/avail" element={<Avail />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/avail" element={<Avail />} />
           <Route path="/summary" element={<Summary />} />
           <Route path="/bookingform" element={<Bookingform />} />
           <Route path="/booknow" element={<Booknow />} />
@@ -52,6 +53,7 @@ function App() {
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/testimony" element={<Testimony />} />
           <Route path="/contactfooter" element={<Contactfooter />} />
+          <Route path="/reviews" element={<Reviews />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
         </Routes>
       </BrowserRouter>

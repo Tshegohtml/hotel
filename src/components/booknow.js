@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../components/booknow.css";
 import { useLocation, useNavigate } from "react-router-dom"; 
-import Logo from "../components/logo-removebg-preview.png";
+
 
 function Booknow() {
     const navigate = useNavigate();
@@ -39,15 +39,20 @@ function Booknow() {
 
     return (
 
-        <div>
-            <div className='booknow-logo'>
-            <img src={Logo} alt="Logo" className="logoRegister" width="400" height="200" />
-            </div>
-        <div className="booknow-container">
-            <div className="booknow-heading">
+        <div className='book-now-summary'>
+            <h1 style={{textAlign:"center"}}>Booking  Summary</h1>
+            <div className='book-now-card'>
 
-                <h1> SUMMARY FOR BOOKING</h1>
-            </div>
+             {/* Display Price Details */}
+             <div className="price-details">
+                    <h3>Price Details</h3>
+                    <p>Room: {room || "Standard"}</p>
+                    <p>Base Price: R {basePrice}</p>
+                    <p>Total Price: R {totalPrice ? totalPrice.toFixed(2) : "0.00"}</p>
+                </div>
+            
+        
+            
           
             <form onSubmit={handleSubmit}>
                 <div>
@@ -84,19 +89,17 @@ function Booknow() {
                     <button type="button" onClick={() => setFormData({ ...formData, adults: '' })}>Edit</button>
                 </div>
 
-                {/* Display Price Details */}
-                <div className="price-details">
-                    <h3>Price Details</h3>
-                    <p>Room: {room || "Standard"}</p>
-                    <p>Base Price: R {basePrice}</p>
-                    <p>Total Price: R {totalPrice ? totalPrice.toFixed(2) : "0.00"}</p>
+               
+                <div >
+                    <button className="continue-btn" type="submit">Proceed to payment</button>
                 </div>
-
-                <div className="booknow-btn">
-                    <button className="continue-btn" type="submit">Continue</button>
-                </div>
+                
             </form>
+            
+
             </div>
+
+            
         </div>
     );
 }

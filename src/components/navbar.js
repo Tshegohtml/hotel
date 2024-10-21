@@ -41,7 +41,7 @@ const NavBar = () => {
        
         
 
-        <Link to="/rooms">
+        <Link to="/avail">
         <li
           className={activeItem === 'Blog' ? 'active' : ''}
           onClick={() => handleMenuClick('Rooms')}

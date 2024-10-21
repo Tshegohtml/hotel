@@ -8,6 +8,7 @@ import Hero from "./hero"
 import Facilities from "./facilities";
 import Testimony from "./testimony";
 import Contactfooter from "./contactfooter";
+import Reviews from "./reviews";
 
 const Homepage = () => {
     const [checkInDate, setCheckInDate] = useState("");
@@ -19,7 +20,7 @@ const Homepage = () => {
 
     
     const handleBookNow = () => {
-        navigate("/rooms");
+        navigate("/avail");
     };
 
     return (
@@ -30,7 +31,9 @@ const Homepage = () => {
             <Ourhistory/>
             <Facilities/>
             <Testimony/>
+            <Reviews/>
             <Contactfooter/>
+            
             
         </div>
     );

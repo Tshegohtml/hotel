@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineLike } from "react-icons/ai";
 import { IoMdShareAlt } from "react-icons/io";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  FaFacebookF,
-  FaWhatsapp,
-  FaBluetoothB,
-  FaFacebookMessenger,
-} from "react-icons/fa";
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons"; 
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../redux/dbslice";
-import "./avail.css";  // Make sure you import the CSS file
+import "./avail.css"; 
 
 function Avail() {
   const navigate = useNavigate();
@@ -19,6 +20,8 @@ function Avail() {
   const [showShareOptions, setShowShareOptions] = useState(null);
   const [likedRoom, setLikedRoom] = useState([]);
 
+  const [showShareModal, setShowShareModal] = useState(false); 
+  const [currentRoomToShare, setCurrentRoomToShare] = useState(''); 
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
@@ -39,11 +42,28 @@ function Avail() {
     }
   };
 
+  const handleShare = (roomType) => {
+    if (navigator.share) {
+      
+      navigator.share({
+        title: `Check out the ${roomType}`,
+        text: `I found this amazing room: ${roomType} at our hotel. You should check it out!`,
+        url: window.location.href,  
+      })
+      .then(() => console.log('Room details shared successfully'))
+      .catch((error) => console.log('Error sharing:', error));
+    } else {
+      
+      setCurrentRoomToShare(roomType);
+      setShowShareModal(true);
+    }
+  };
+
   return (
     <div className="avail-container">
       <div className="text">
-        <h1>Explore Our Elegant Rooms</h1>
-        <p>
+        <h1 className="room-header">Explore Our Elegant Rooms</h1>
+        <p className="room-text">
           Experience comfort and luxury in our well-appointed rooms, designed to
           meet all your needs during your stay. Whether you're here for business
           or leisure, our rooms offer a relaxing atmosphere, complete with
@@ -52,56 +72,73 @@ function Avail() {
           perfect blend of style and functionality for an unforgettable stay.
         </p>
       </div>
-      {data.map((room, index) => (
-        <div className="rooms" key={index}>
-          <div className="rooms-image-div">
-            <img src={room.image} className="room-img-avail" alt={room.type} />
-          </div>
-          <div className="info">
-            <h3>{room.type}</h3>
-            <p>{room.details}</p>
-            <p>{room.Rooms}</p>
-            <p className="room-cost">R {room.Amount} per night</p>
-            <p>
-              <strong>Amenities:</strong> {room.Amenities}
-            </p>
-            <p>
-              <strong>Check-In-Time:</strong> {room.checkIn}
-            </p>
-            <p>
-              <strong>Check-Out-Time:</strong> {room.checkOut}
-            </p>
-            <div className="buttons-container">
-              <button
-                className="available-btn book-now-btn"
-                onClick={() => handleBookNowClick(room)}
-              >
-                BOOK NOW
-              </button>
-              <div className="avail-icons">
-                <AiOutlineLike
-                  size={30}
-                  onClick={() => toggleLike(index)}
-                  className={likedRoom.includes(index) ? "liked like-icon" : "unliked like-icon"}
-                />
-                <IoMdShareAlt
-                  size={30}
-                  onClick={() => toggleShareOptions(index)}
-                  style={{ cursor: "pointer" }}
-                />
-                {showShareOptions === index && (
-                  <div className="share-options">
-                    <FaFacebookF size={30} className="share-icon" />
-                    <FaWhatsapp size={30} className="share-icon" />
-                    <FaBluetoothB size={30} className="share-icon" />
-                    <FaFacebookMessenger size={30} className="share-icon" />
-                  </div>
-                )}
+      <div className="room">
+        {data.map((room, index) => (
+          <div
+            className="room-page"
+            key={index}
+          
+          >
+            <div className="room-head">
+              <div className="image-container">
+                <img className="room-top" src={room.image} alt={room.Rooms} />
+                <div className="avail-icons">
+                  <AiOutlineLike
+                    size={30}
+                    onClick={(e) => {
+                      e.stopPropagation(); 
+                      toggleLike(index);
+                    }}
+                    className={
+                      likedRoom.includes(index) ? "liked like-icon" : "unliked like-icon"
+                    }
+                    style={{ color: likedRoom.includes(index) ? "green" : "black" }} 
+                  />
+                  <IoMdShareAlt
+                    size={30}
+                   
+                    style={{ cursor: "pointer" }}
+                    onClick={()=> handleShare(room)}
+                  />
+                  {showShareOptions === index && (
+                    <div className="share-options">
+                      <FontAwesomeIcon
+                        icon={faFacebook}
+                        size="2x"
+                        className="share-icon"
+                        onClick={() => alert("Shared on Facebook!")} 
+                      />
+                      <FontAwesomeIcon
+                        icon={faTwitter}
+                        size="2x"
+                        className="share-icon"
+                        onClick={() => alert("Shared on Twitter!")} 
+                      />
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        size="2x"
+                        className="share-icon"
+                        onClick={() => alert("Shared on Instagram!")} 
+                      />
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        size="2x"
+                        className="share-icon"
+                        onClick={() => alert("Shared on LinkedIn!")} 
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="room-down">
+                <h3>{room.Rooms}</h3>
+                <p className="room-price">Price: R{room.Amount}</p>
+                <p>{room.Details}</p>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

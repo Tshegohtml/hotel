@@ -1,3 +1,64 @@
+
+
+.hero-section{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+}
+
+
+.view-room-content{
+    display: flex;
+    gap:2rem;
+}
+
+
+.view-room-content-h {
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+}
+
+.view-room-content-h1{
+    font-size: 2.5rem;
+}
+
+.rooms-1 {
+    
+    width: 800px; 
+    height: 400px; 
+    margin: 20px; 
+    padding: 20px; 
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+   
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.view-room-form{
+    width: 700px; 
+    height: auto; 
+    margin: 20px; 
+    padding: 20px; 
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+   
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.view-room-price-details-details {
+    margin-top: 20px; 
+    padding: 15px; 
+    background-color: gray;
+    border-radius: 4px; 
+}
+
 .rooms {
     width: 90%;
     margin-left: auto; 
@@ -39,17 +100,7 @@
     font-size: 18px;
     color: black;
 }
-.rooms-1 {
-    
-    width: 500px; 
-    height: 400px; 
-    margin: 20px; 
-    padding: 20px; 
-    border: 1px solid #ccc;
-    border-radius: 8px; 
-   
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-}
+
 
 .icons-con {
     display: flex;
@@ -96,4 +147,16 @@
     width: 90%; 
     height: auto; 
     border-radius: 5px; 
+}
+.summary-reserve-button{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color:skyblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
 }

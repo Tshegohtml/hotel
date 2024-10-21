@@ -8,6 +8,7 @@ const initialState = {
   data: [],
   loading: false,
   error: null,
+  reviews :[]
 };
 export const dbSlice = createSlice({
   name: "db",
@@ -19,6 +20,11 @@ export const dbSlice = createSlice({
     },
     setData(state, action) {
       state.data = action.payload;
+      state.loading = false;
+    },
+
+    setReviews(state, action) {
+      state.reviews = action.payload;
       state.loading = false;
     },
     setError(state, action) {
@@ -68,6 +74,21 @@ export const getBookings = () => async (dispatch) => {
   dispatch(setLoading());
   try {
     const querySnapshot = await getDocs(collection(db, "bookings"));
+    const data = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    dispatch(setData(data));
+  } catch (error) {
+    dispatch(setError(error.message));
+  }
+};
+
+
+export const getReviews = () => async (dispatch) => {
+  dispatch(setLoading());
+  try {
+    const querySnapshot = await getDocs(collection(db, "Reviews"));
     const data = querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
