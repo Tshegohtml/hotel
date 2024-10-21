@@ -3,7 +3,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from '../config/firebase';
 import StarRating from './star';
 import "./reviews.css";
-import { getReviews } from '../redux/dbslice';
+import { getReviews, addReviews } from '../redux/dbslice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Reviews = () => {
@@ -22,17 +22,22 @@ const Reviews = () => {
 
   // Function to handle review submission
   const addReview = () => {
-    console.log("Review submitted:", {
-      name: nameInput,
+   
+
+    let review = {
+        name: nameInput,
       email: userEmail, // Use user-provided email
       review: reviewText,
       rating,
-    });
-    // Reset form
-    setNameInput("");
-    setReviewText("");
-    setRating(0);
-    setUserEmail(""); // Clear the email input after submission
+    }
+
+    console.log(review)
+
+    dispatch(addReviews(review));
+
+  
+
+
   };
 
   if (loading) {
@@ -40,8 +45,11 @@ const Reviews = () => {
   }
 
   return (
-    <div className="review-list-container">
+
+    <>
       <h2>Reviews</h2>
+    <div className="review-list-container">
+    
       {data.length === 0 ? (
         <p>No reviews yet!</p>
       ) : (
@@ -63,7 +71,7 @@ const Reviews = () => {
         <h4>Leave a Review</h4>
         <input
           placeholder="Your Name"
-          value={nameInput}
+        
           onChange={(e) => setNameInput(e.target.value)}
         />
         <input
@@ -74,12 +82,12 @@ const Reviews = () => {
         <input
           className="INput-2"
           placeholder="Review here"
-          value={reviewText}
+       
           onChange={(e) => setReviewText(e.target.value)}
         />
         <RatingReview
           className="RAting"
-          rating={rating}
+        
           setRating={setRating}
         />
         <br />
@@ -88,6 +96,7 @@ const Reviews = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 

@@ -35,6 +35,10 @@ export const dbSlice = createSlice({
       state.data.push(action.payload);
       state.loading = false;
     },
+    setReview(state, action) {
+      state.data.push(action.payload);
+      state.loading = false;
+    },
     addRoomToState(state, action) {
       state.data.push(action.payload);
       state.loading = false;
@@ -84,6 +88,19 @@ export const getBookings = () => async (dispatch) => {
   }
 };
 
+
+export const addReviews = (reviewData) => async (dispatch) => {
+  try {
+    dispatch(setLoading());
+    const docRef = await addDoc(collection(db, "Reviews"), reviewData);
+    console.log("Document written with ID: ", docRef.id);
+   // dispatch(setData({ id: docRef.id, ...reviewData }));
+
+    alert("Review successfully")
+  } catch (error) {
+    dispatch(setError(error.message));
+  }
+};
 
 export const getReviews = () => async (dispatch) => {
   dispatch(setLoading());

@@ -30,7 +30,7 @@ const Homepage = () => {
             <Hero/>
             <Ourhistory/>
             <Facilities/>
-            <Testimony/>
+            
             <Reviews/>
             <Contactfooter/>
             
