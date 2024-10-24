@@ -7,10 +7,10 @@ import { getReviews, addReviews } from '../redux/dbslice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Reviews = () => {
-  const [nameInput, setNameInput] = useState(""); // State for name input
-  const [reviewText, setReviewText] = useState(""); // State for review text
-  const [rating, setRating] = useState(0); // State for rating
-  const [userEmail, setUserEmail] = useState(""); // State to store user email
+  const [nameInput, setNameInput] = useState("");
+  const [reviewText, setReviewText] = useState(""); 
+  const [rating, setRating] = useState(0); 
+  const [userEmail, setUserEmail] = useState(""); 
 
   const { data, loading } = useSelector((state) => state.data);
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Reviews = () => {
 
     let review = {
         name: nameInput,
-      email: userEmail, // Use user-provided email
+      email: userEmail, 
       review: reviewText,
       rating,
     }
@@ -47,7 +47,9 @@ const Reviews = () => {
   return (
 
     <>
-      <h2>Reviews</h2>
+   
+      <h2 className="review-para">REVIEWS</h2>
+      
     <div className="review-list-container">
     
       {data.length === 0 ? (

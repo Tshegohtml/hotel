@@ -21,7 +21,7 @@ const dispatch=useDispatch();
 
 const handleSignUp = (e) => {
   e.preventDefault();
-  dispatch(signUp({ firstName: firstname, lastName: lastname, email, password }));
+  dispatch(signUp({ firstName: firstname, lastName: lastname, email, password, phoneNumber: phone }));
 };
 
 

@@ -17,7 +17,6 @@ import PaymentPage from "./components/payment";
 import Bookingform from "./components/bookingform";
 import AdminDashboard from "./components/admindashboard";
 import Resturant from "./components/resturant";
-import Profile from "./components/profile";
 import ForgotPassword from "./components/forgotpassword"; 
 import Ourhistory from "./components/ourhistory";
 import Facilities from "./components/facilities";
@@ -34,7 +33,6 @@ function App() {
        
         <Routes>
           <Route path="/" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/userprofile" element={<Userprofile/>} />
           <Route path="/home" element={<Homepage />} />

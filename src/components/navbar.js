@@ -48,6 +48,15 @@ const NavBar = () => {
         >
          Rooms
         </li></Link>
+
+        <Link to="/userprofile">
+        <li
+          className={activeItem === 'Blog' ? 'active' : ''}
+          onClick={() => handleMenuClick('Userprofile')}
+        >
+         Userprofile
+        </li></Link>
+        
       </ul>
     </div>
   );
