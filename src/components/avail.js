@@ -9,6 +9,9 @@ import { fetchData } from "../redux/dbslice";
 import { addToFavorites } from "../redux/authSlice";
 import "./avail.css"; 
 
+import NavBar from "./navbar";
+import Contactfooter from "./contactfooter";
+
 function Avail() {
   const navigate = useNavigate();
   const { data } = useSelector((state) => state.data);
@@ -66,7 +69,8 @@ function Avail() {
   };
 
   return (
-    <div className="avail-container">
+    <div >
+       <NavBar/>
       <div className="text">
         <h1 className="room-header">Explore Our Elegant Rooms</h1>
         <p className="room-text">
@@ -141,10 +145,19 @@ function Avail() {
                 <p className="room-price">Price: R{room.Amount}</p>
                 <p>{room.Details}</p>
               </div>
+              
             </div>
+          
           </div>
         ))}
       </div>
+      <div>
+   
+      </div>
+      <div className="footer-avail">
+      <Contactfooter/>
+      </div>
+    
     </div>
   );
 }

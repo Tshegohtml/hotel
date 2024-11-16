@@ -68,53 +68,13 @@ const Reviews = () => {
         </ul>
       )}
 
-      {/* Review Form */}
-      <div className="review-content">
-        <h4>Leave a Review</h4>
-        <input
-          placeholder="Your Name"
-        
-          onChange={(e) => setNameInput(e.target.value)}
-        />
-        <input
-          placeholder="Your Email"
-          value={userEmail} // Editable email input
-          onChange={(e) => setUserEmail(e.target.value)} // Update state on change
-        />
-        <input
-          className="INput-2"
-          placeholder="Review here"
-       
-          onChange={(e) => setReviewText(e.target.value)}
-        />
-        <RatingReview
-          className="RAting"
-        
-          setRating={setRating}
-        />
-        <br />
-        <button className="Send-button" onClick={addReview}>
-          Send
-        </button>
-      </div>
+      
     </div>
     </>
   );
 };
 
 // Dummy RatingReview component
-const RatingReview = ({ rating, setRating }) => (
-  <div className="rating-review">
-    <label>Rate your stay: </label>
-    <select value={rating} onChange={(e) => setRating(e.target.value)}>
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-  </div>
-);
+
 
 export default Reviews;

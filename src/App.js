@@ -22,7 +22,7 @@ import Ourhistory from "./components/ourhistory";
 import Facilities from "./components/facilities";
 import Testimony from "./components/testimony";
 import Contactfooter from "./components/contactfooter";
-import Userprofile from "./components/userprofile";
+import Profile from "./components/userprofile";
 import Reviews from "./components/reviews";
 
 
@@ -34,7 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/userprofile" element={<Userprofile/>} />
+          <Route path="/profile" element={<Profile/>} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/avail" element={<Avail />} />
           <Route path="/rooms" element={<Rooms />} />

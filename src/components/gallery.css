@@ -1,50 +1,73 @@
+/* Container styling */
+.gallery-container {
+  padding: 40px;
 
+  text-align: center;
+  max-width: 1200px; /* Set a max-width to control the width */
+  margin: 0 auto; /* Center the container horizontally */
+  border-radius: 10px; /* Optional: add rounded corners for styling */
   
-  .viewmore-container {
-    padding: 20px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8); 
-  }
-  
-  .the-heading h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .heading p {
-    font-size: 24px;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  
-  .img-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .img-div {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
+}
+/* Section heading */
+.headingof-gallery h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: skyblue;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Room section heading */
+.room-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: skyblue;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* Image grid for each room section */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Individual room item */
+.room-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Image styling */
+.picture-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.picture-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Room description styling */
+.room-description {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .picture-img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 150px;
   }
-  
-  @media (max-width: 768px) {
-    .picture-img {
-      width: 150px;
-      height: 150px;
-    }
-  }
-  
+}

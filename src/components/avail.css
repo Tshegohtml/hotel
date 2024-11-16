@@ -112,7 +112,7 @@
   margin: 0 auto;
   font-size: 1.15rem;
   text-align: center;
-  border-bottom: 1px solid #201719;
+
   padding-top: 2%;
 }
 
@@ -139,4 +139,8 @@
   border: none;
   cursor: pointer; 
   outline: none; 
+}
+
+.footer-avail{
+  padding-top: 8%;
 }

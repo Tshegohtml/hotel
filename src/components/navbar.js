@@ -49,12 +49,12 @@ const NavBar = () => {
          Rooms
         </li></Link>
 
-        <Link to="/userprofile">
+        <Link to="/profile">
         <li
           className={activeItem === 'Blog' ? 'active' : ''}
-          onClick={() => handleMenuClick('Userprofile')}
+          onClick={() => handleMenuClick('Profile')}
         >
-         Userprofile
+         profile
         </li></Link>
         
       </ul>

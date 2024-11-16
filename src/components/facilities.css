@@ -12,11 +12,13 @@
 }
 
 .faciliti-para{
-    width:1000px
+    width:1000px;
+    padding-left: 20%;
 }
 .facility-icons{
     display: flex;
     justify-content:space-around;
     margin-top: 3%;
+    padding-left: 20%;
 
 }
