@@ -3,6 +3,8 @@ import { getDocs, collection, addDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { async } from "@firebase/util";
 
+import Swal from 'sweetalert2';
+
 
 const initialState = {
   data: [],
@@ -96,7 +98,13 @@ export const addReviews = (reviewData) => async (dispatch) => {
     console.log("Document written with ID: ", docRef.id);
    // dispatch(setData({ id: docRef.id, ...reviewData }));
 
-    alert("Review successfully")
+   Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Registered successfully",
+    showConfirmButton: false,
+    timer: 1500,
+  });
   } catch (error) {
     dispatch(setError(error.message));
   }

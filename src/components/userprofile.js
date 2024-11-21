@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAuth } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import { db } from "../config/firebase"; // Ensure you have Firebase initialized
 import { collection, getDocs } from "firebase/firestore";
 import { useSelector, useDispatch } from "react-redux";
@@ -13,6 +13,10 @@ import NavBar from "./navbar";
 import Contactfooter from "./contactfooter";
 import "./userprofile.css";
 
+import Swal from 'sweetalert2';
+
+import { useNavigate } from "react-router-dom";
+
 const Userprofile = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -21,6 +25,7 @@ const Userprofile = () => {
   const [likedRoom, setLikedRoom] = useState([]);
   const [showShareOptions, setShowShareOptions] = useState(null);
   const [view, setView] = useState('favorites'); // Track current view (favorites/bookings)
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     if (!data.length) { // updated from rooms.length to data.length
@@ -44,6 +49,28 @@ const Userprofile = () => {
 
     fetchBookings();
   }, [dispatch, data.length, user]);
+
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Do you want to logout?",
+      showDenyButton: true,
+      confirmButtonText: "Yes",
+      denyButtonText: "No",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        signOut(getAuth()) // Log the user out
+          .then(() => {
+            navigate("/"); // Redirect to login page after successful logout
+          })
+          .catch((error) => {
+            console.error("Error logging out:", error);
+            Swal.fire("Error", "Failed to log out", "error");
+          });
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
+  };
 
   if (!user) {
     return <p>No user data available</p>;
@@ -108,11 +135,33 @@ const Userprofile = () => {
       </div>
 
       <div className="profile-container">
-        <h1>My Profile</h1>
-        <p>First Name: {user.firstName}</p>
-        <p>Last Name: {user.lastName}</p>
-        <p>Email: {user.email}</p>
-        <p>Phone: {user.phoneNumber}</p>
+ 
+  <h1>My Profile</h1>
+  <button className="logout-btn" onClick={() => { 
+      // Add your logout logic here
+      Swal.fire({
+        title: "Do you want to logout?",
+        showDenyButton: true,
+       
+        confirmButtonText: "Yes",
+        denyButtonText: `No`
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire("Logged out sucessfully!", "", "success");
+          handleLogout();
+        } else if (result.isDenied) {
+          Swal.fire("Changes are not saved", "", "info");
+        }
+      }); 
+    }}>
+    Logout
+  </button>
+  <p>First Name: {user.firstName}</p>
+  <p>Last Name: {user.lastName}</p>
+  <p>Email: {user.email}</p>
+  <p>Phone: {user.phoneNumber}</p>
+
 
         {/* Toggle Buttons */}
         <div className="toggle-buttons">

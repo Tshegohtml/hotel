@@ -24,6 +24,10 @@ import Testimony from "./components/testimony";
 import Contactfooter from "./components/contactfooter";
 import Profile from "./components/userprofile";
 import Reviews from "./components/reviews";
+import Loader from "./components/loader";
+import Addroomform from "./components/addroomform";
+import Viewaddedrooms from "./components/viewaddedrooms";
+import ViewAddedRooms from "./components/viewaddedrooms";
 
 
 function App() {
@@ -53,6 +57,8 @@ function App() {
           <Route path="/contactfooter" element={<Contactfooter />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/addroomform" element={<Addroomform />} />
+          <Route path="/viewaddedrooms" element={<Viewaddedrooms />} />
         </Routes>
       </BrowserRouter>
     </div>

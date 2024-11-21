@@ -1,23 +1,44 @@
 import React, { useState } from "react";
 import "./contactfooter.css";
+import {addReviews} from "../redux/dbslice";
+
+import {useDispatch, useSelector } from "react-redux"
+
+
 
 function Contactfooter() {
   const [nameInput, setNameInput] = useState("");
   const [reviewText, setReviewText] = useState("");
   const [rating, setRating] = useState(0);
   const [userEmail, setUserEmail] = useState("");
+  const dispatch = useDispatch ();
+  const { user, error, loading } = useSelector((state) => state.auth);
 
-  const addReview = () => {
+ 
+
+  const handleaddReview = () => {
     console.log("Review submitted:", {
       name: nameInput,
       email: userEmail,
       review: reviewText,
       rating,
     });
-    setNameInput("");
-    setReviewText("");
-    setRating(0);
-    setUserEmail("");
+
+    let review = {
+    
+        name: nameInput,
+        email: userEmail,
+        review: reviewText,
+        rating,
+    }
+
+  dispatch (addReviews(review))
+
+    
+  //   setNameInput("");
+  //   setReviewText("");
+  //   setRating(0);
+  //   setUserEmail("");
   };
 
   return (
@@ -38,41 +59,42 @@ function Contactfooter() {
         </div>
 
         <div className="review-content">
-        <h4>Leave a Review</h4>
-        <input
-          className="input-field"
-          placeholder="Your Name"
-          value={nameInput}
-          onChange={(e) => setNameInput(e.target.value)}
-        /> <br></br>
-        <input
-          className="input-field"
-          placeholder="Your Email"
-          value={userEmail}
-          onChange={(e) => setUserEmail(e.target.value)}
-        />  <br></br>
-        <textarea
-          className="input-field"
-          placeholder="Review here"
-          value={reviewText}
-          onChange={(e) => setReviewText(e.target.value)}
-        />
-        <div className="rating-container">
-          <p>Rating:</p>
-          {[1, 2, 3, 4, 5].map((num) => (
-            <button
-              key={num}
-              className={`small-button ${rating === num ? "active" : ""}`}
-              onClick={() => setRating(num)}
-            >
-              {num}
-            </button>
-          ))}
+          <h4>Leave a Review</h4>
+          <input
+            className="input-field"
+            placeholder="Your Name"
+            value={nameInput}
+            onChange={(e) => setNameInput(e.target.value)}
+          /> <br></br>
+          <input
+            className="input-field"
+            placeholder="Your Email"
+            value={userEmail}
+            onChange={(e) => setUserEmail(e.target.value)}
+          />  <br></br>
+          <textarea
+            className="input-field"
+            placeholder="Review here"
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
+          />
+          {/* Rating Component */}
+          <div className="rating-container">
+            <p>Rating:</p>
+            {[1, 2, 3, 4, 5].map((num) => (
+              <button
+                key={num}
+                className={`small-button ${rating === num ? "active" : ""}`}
+                onClick={() => setRating(num)}
+              >
+                {num}
+              </button>
+            ))}
+          </div>
+          <button className="send-button" onClick={handleaddReview}>
+            Submit
+          </button>
         </div>
-        <button className="send-button" onClick={addReview}>
-          Submit
-        </button>
-      </div>
 
         <div>
           <h1>LOCATION</h1>
@@ -86,8 +108,6 @@ function Contactfooter() {
           ></iframe>
         </div>
       </div>
-
-      
     </div>
   );
 }
@@ -96,7 +116,7 @@ function Contactfooter() {
 const RatingReview = ({ rating, setRating }) => (
   <div className="rating-review">
     <label>Rate your stay: </label>
-    <select value={rating} onChange={(e) => setRating(e.target.value)}>
+    <select value={rating} onChange={(e) => setRating(Number(e.target.value))}>
       <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -106,6 +126,5 @@ const RatingReview = ({ rating, setRating }) => (
     </select>
   </div>
 );
-
 
 export default Contactfooter;
